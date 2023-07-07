@@ -30,10 +30,10 @@ public class MainController {
 
 	@PostMapping(path="/add") // Map ONLY POST Requests
 	public @ResponseBody String addNewUser (@RequestParam String name
-			, @RequestParam String email) {
+			, @RequestParam String apellido) {
 		User n = new User();
 		n.setName(name);
-		n.setEmail(email);
+		n.setApellido(apellido);
 		userRepository.save(n);
 		return "Saved";
 	}
@@ -48,11 +48,11 @@ public class MainController {
 
 	@PutMapping(path="/edit")
 	public @ResponseBody String editUser (@RequestParam Integer id, @RequestParam String name
-	, @RequestParam String email) {
+	, @RequestParam String apellido) {
 		User n = new User();
 		n.setId(id);
 		n.setName(name);
-		n.setEmail(email);
+		n.setApellido(apellido);
 		userRepository.save(n);
 		return "Updated";
 	}
@@ -71,7 +71,7 @@ public class MainController {
 
 	@GetMapping(path="/get/report")
 	public @ResponseBody List<Map<String, Object>> getReport() {
-		List<Map<String, Object>> queryResult = jdbcTemplate.queryForList("SELECT CONCAT(name, ' ==> ', email) as mycol FROM user");
+		List<Map<String, Object>> queryResult = jdbcTemplate.queryForList("SELECT CONCAT(name, ' ==> ', apellido) as mycol FROM user");
 		return queryResult;
 	}
 
