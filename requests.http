@@ -10,11 +10,11 @@ GET http://localhost:8080/demo/all
 
 ###
 # 1: Mostrar su código IDAT y su nombre en el siguiente formato: CÓDIGO - NOMBRE
-GET https://saludo.onrender.com/demo/all
+GET https://saludo.onrender.com/demo/add
 
 ###
 # 2: Mostrar su código IDAT
-GET https://{{saludo}}.onrender.com/idat/codigo
+GET https://{{saludo}}.onrender.com/
 
 ###
 # 3: Mostrar su nombre completo
